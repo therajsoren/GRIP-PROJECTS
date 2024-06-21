@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grip Bank - Customer Table</title>
+    <link rel="stylesheet" href="customertable.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div id="main">
+        <div id="nav1">
+            <div id="nav-part1">
+                <i class='bx bxs-bank'></i>
+                <h1>Grip Bank</h1>
+            </div>
+            <div id="nav-part2">
+                <a href="index.html">HOME</a>
+                <a href="customertable.html">CUSTOMER</a>
+                <a href="about.html">ABOUT</a>
+            </div>
+        </div>
+        <!-- Customer Table Section -->
+        <section id="customer-table">
+            <h2>Customer List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer Name</th>
+                        <th>Gmail Address</th>
+                        <th>Amount</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>john.doe@gmail.com</td>
+                        <td><span id="balance1">$10000</span></td>
+                        <td><button onclick="transferMoney('john.doe@gmail.com')">Transfer</button></td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>jane.smith@gmail.com</td>
+                        <td><span id="balance2">$1500</span></td>
+                        <td><button onclick="transferMoney('jane.smith@gmail.com')">Transfer</button></td>
+                    </tr>
+                    <tr>
+                        <td>Michael Johnson</td>
+                        <td>michael.johnson@gmail.com</td>
+                        <td><span id="balance3">$2000</span></td>
+                        <td><button onclick="transferMoney('michael.johnson@gmail.com')">Transfer</button></td>
+                    </tr>
+                    <tr>
+                        <td>Emily Davis</td>
+                        <td>emily.davis@gmail.com</td>
+                        <td><span id="balance4">$2500</span></td>
+                        <td><button onclick="transferMoney('emily.davis@gmail.com')">Transfer</button></td>
+                    </tr>
+                    <tr>
+                        <td>David Brown</td>
+                        <td>david.brown@gmail.com</td>
+                        <td><span id="balance5">$3000</span></td>
+                        <td><button onclick="transferMoney('david.brown@gmail.com')">Transfer</button></td>
+                    </tr>
+                    <tr>
+                        <td>Sarah Wilson</td>
+                        <td>sarah.wilson@gmail.com</td>
+                        <td><span id="balance6">$3500</span></td>
+                        <td><button onclick="transferMoney('sarah.wilson@gmail.com')">Transfer</button></td>
+                    </tr>
+                    <tr>
+                        <td>James Miller</td>
+                        <td>james.miller@gmail.com</td>
+                        <td><span id="balance7">$4000</span></td>
+                        <td><button onclick="transferMoney('james.miller@gmail.com')">Transfer</button></td>
+                    </tr>
+                    <tr>
+                        <td>Ashley Taylor</td>
+                        <td>ashley.taylor@gmail.com</td>
+                        <td><span id="balance8">$4500</span></td>
+                        <td><button onclick="transferMoney('ashley.taylor@gmail.com')">Transfer</button></td>
+                    </tr>
+                    <tr>
+                        <td>Robert Anderson</td>
+                        <td>robert.anderson@gmail.com</td>
+                        <td><span id="balance9">$5000</span></td>
+                        <td><button onclick="transferMoney('robert.anderson@gmail.com')">Transfer</button></td>
+                    </tr>
+                    <tr>
+                        <td>Mary Thomas</td>
+                        <td>mary.thomas@gmail.com</td>
+                        <td><span id="balance10">$5500</span></td>
+                        <td><button onclick="transferMoney('mary.thomas@gmail.com')">Transfer</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- Transaction History Section -->
+        <section id="transaction-history">
+            <h2>Transaction History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date/Time</th>
+                        <th>Sender</th>
+                        <th>Recipient</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="transaction-list">
+                </tbody>
+            </table>
+        </section>
+        <footer>
+            <h4>Copyright ©2024 Grip Bank. All rights reserved.</h4>
+        </footer>
+    </div>
+
+    <!-- JavaScript for Transfer Money Functionality -->
+    <script>
+        var balances = {
+            'john.doe@gmail.com': 10000,
+            'jane.smith@gmail.com': 1500,
+            'michael.johnson@gmail.com': 2000,
+            'emily.davis@gmail.com': 2500,
+            'david.brown@gmail.com': 3000,
+            'sarah.wilson@gmail.com': 3500,
+            'james.miller@gmail.com': 4000,
+            'ashley.taylor@gmail.com': 4500,
+            'robert.anderson@gmail.com': 5000,
+            'mary.thomas@gmail.com': 5500
+        };
+
+        function transferMoney(recipient) {
+            var amount = prompt("Enter amount to transfer:");
+            if (amount !== null) {
+                amount = parseFloat(amount);
+                if (!isNaN(amount) && amount > 0) {
+                    var sender = 'john.doe@gmail.com'; 
+                    if (sender === recipient) {
+                        alert("Cannot transfer money to yourself.");
+                        return;
+                    }
+
+                    if (balances[sender] >= amount) {
+                        balances[sender] -= amount;
+                        balances[recipient] += amount;
+                        
+                        var transactionRow = `<tr>
+                                                <td>${new Date().toLocaleString()}</td>
+                                                <td>${sender}</td>
+                                                <td>${recipient}</td>
+                                                <td>$${amount}</td>
+                                              </tr>`;
+                        document.getElementById("transaction-list").innerHTML += transactionRow;
+
+                        document.getElementById("balance1").textContent = `$${balances['john.doe@gmail.com']}`;
+                        document.getElementById("balance2").textContent = `$${balances['jane.smith@gmail.com']}`;
+                        document.getElementById("balance3").textContent = `$${balances['michael.johnson@gmail.com']}`;
+                        document.getElementById("balance4").textContent = `$${balances['emily.davis@gmail.com']}`;
+                        document.getElementById("balance5").textContent = `$${balances['david.brown@gmail.com']}`;
+                        document.getElementById("balance6").textContent = `$${balances['sarah.wilson@gmail.com']}`;
+                        document.getElementById("balance7").textContent = `$${balances['james.miller@gmail.com']}`;
+                        document.getElementById("balance8").textContent = `$${balances['ashley.taylor@gmail.com']}`;
+                        document.getElementById("balance9").textContent = `$${balances['robert.anderson@gmail.com']}`;
+                        document.getElementById("balance10").textContent = `$${balances['mary.thomas@gmail.com']}`;
+                        
+                        alert(`Transfer $${amount} to ${recipient}`);
+                    } else {
+                        alert("Insufficient balance.");
+                    }
+                } else {
+                    alert("Invalid amount. Please enter a valid number.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
