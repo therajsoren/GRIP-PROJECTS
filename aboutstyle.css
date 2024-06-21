@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 95%;
+}
+#main{
+    width: 100%;
+    height: 96.5%;
+    /* background-color: red; */
+}
+
+#nav1{
+    background-color: #4CAF50;
+    width: 100%;
+    height: 90px;
+    padding-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav-part1{
+    width: 20em;
+    /* height: 80px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: rebeccapurple; */
+}
+#nav-part1 i{
+    font-size: 4em;
+    color: #f2f2f2;
+}
+#nav-part1::before{
+    content: "";
+    
+}
+#nav-part1 h1{
+    font-weight: 600;
+    color: #f2f2f2;
+}
+#nav-part2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    margin-right: 3em;
+}
+#nav-part2 a{
+    text-decoration: none;
+    color: #f2f2f2;
+}
+#nav-part2 a:hover{
+    color: #ac0d0d;
+}
+
+#about{
+    height: 92.67%;
+    width: 100%;
+    /* background-color: darkorange; */
+    background-image: url(images/scott-graham-OQMZwNd3ThU-unsplash.jpg);
+    background-size: cover;
+    /* object-fit: cover; */
+    background-position: 10% 40%;
+}
+
+#about-text{
+    width: 100%;
+    height: 100%;
+    /* background-color: blueviolet; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2px;
+}
+.zero{
+    height: 100%;
+    margin-left: 20px;
+    /* padding-top: 120px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: blanchedalmond; */
+}
+.zero h4{
+    color: #fff;
+}
+.first{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* padding-top: 90px; */
+    justify-content: space-around;
+    padding-left: 20px;
+    /* background-color: antiquewhite; */
+}
+#about-text p{
+    font-size: 15px;
+    gap: 10px;
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    /* position: fixed; */
+    width: 100%;
+}
