@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#main{
+    width: 100%;
+    height: 96.5%;
+    /* background-color: red; */
+}
+
+#nav1{
+    background-color: #4CAF50;
+    width: 100%;
+    height: 90px;
+    padding-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav-part1{
+    width: 20em;
+    /* height: 80px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: rebeccapurple; */
+}
+#nav-part1 i{
+    font-size: 4em;
+    color: #f2f2f2;
+}
+#nav-part1::before{
+    content: "";
+    
+}
+#nav-part1 h1{
+    font-weight: 600;
+    color: #f2f2f2;
+}
+#nav-part2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    margin-right: 3em;
+}
+#nav-part2 a{
+    text-decoration: none;
+    color: #f2f2f2;
+}
+#nav-part2 a:hover{
+    color: #ac0d0d;
+}
+/* Customer table section styles */
+#customer-table {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#customer-table h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#customer-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#customer-table th, #customer-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#customer-table th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+#customer-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#customer-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+#customer-table button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#customer-table button:hover {
+    background-color: #45a049;
+}
+
+/* Transaction history section styles */
+#transaction-history {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#transaction-history h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#transaction-history table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#transaction-history th, #transaction-history td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#transaction-history th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+#transaction-history tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#transaction-history tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    /* position: fixed; */
+    width: 100%;
+}
